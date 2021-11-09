@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fphoenixcorneae.netease.cloudmusic.main">
+
+    <application
+        android:name=".core.app.CloudMusicApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/netease_cloud_music_app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".mvvm.main.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
