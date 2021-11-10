@@ -38,6 +38,7 @@ object Deps {
         const val multiDex = "androidx.multidex:multidex:2.0.1"
         const val appcompat = "androidx.appcompat:appcompat:1.3.1"
         const val coreKtx = "androidx.core:core-ktx:1.6.0"
+        const val coreSplashScreen = "androidx.core:core-splashscreen:1.0.0-alpha02"
         const val material = "com.google.android.material:material:1.4.0"
         const val paletteKtx = "androidx.palette:palette-ktx:1.0.0"
         const val pagingRuntime = "androidx.paging:paging-runtime-ktx:3.0.1"

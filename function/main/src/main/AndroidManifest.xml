@@ -11,10 +11,21 @@
         android:label="@string/netease_cloud_music_app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
-        tools:replace="android:allowBackup">
+        android:theme="@style/Theme.App"
+        tools:replace="android:allowBackup, android:theme">
         <activity
             android:name=".mvvm.main.MainActivity"
-            android:exported="true">
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".mvvm.splash.SplashScreenCompatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -10,6 +10,7 @@ internal val androidXDependencies = listOf(
     Deps.AndroidX.multiDex,
     Deps.AndroidX.appcompat,
     Deps.AndroidX.coreKtx,
+    Deps.AndroidX.coreSplashScreen,
     Deps.AndroidX.material,
     Deps.AndroidX.paletteKtx,
     Deps.AndroidX.pagingRuntime,
