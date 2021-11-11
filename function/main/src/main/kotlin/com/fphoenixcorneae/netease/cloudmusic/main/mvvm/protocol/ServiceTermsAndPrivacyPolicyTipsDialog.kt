@@ -40,11 +40,10 @@ import kotlinx.coroutines.launch
  */
 @Preview
 @Composable
-fun ServiceTermsAndPrivacyPolicyTipsDialog() {
-    var agreeWithTheProtocol by remember {
-        mutableStateOf(defaultMMKV.decodeBool(CommonConst.Default.AGREE_WITH_THE_PROTOCOL, false))
-    }
-    if (agreeWithTheProtocol) {
+fun ServiceTermsAndPrivacyPolicyTipsDialog(
+    agreeWithTheProtocol: MutableState<Boolean> = mutableStateOf(false)
+) {
+    if (agreeWithTheProtocol.value) {
         return
     }
     Box(
@@ -70,7 +69,7 @@ fun ServiceTermsAndPrivacyPolicyTipsDialog() {
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
             )
-            val content = stringResource(id = R.string.service_terms_and_privacy_policy_tips_content)
+            val protocolContent = stringResource(id = R.string.service_terms_and_privacy_policy_tips_content)
             val serviceTerms = stringResource(id = R.string.service_terms)
             val privacyPolicy = stringResource(id = R.string.privacy_policy)
             val childrenPrivacyPolicy = stringResource(id = R.string.children_privacy_policy)
@@ -163,9 +162,9 @@ fun ServiceTermsAndPrivacyPolicyTipsDialog() {
                         )
                     ) {
                         append(
-                            text = content.substring(
+                            text = protocolContent.substring(
                                 startIndex = 0,
-                                endIndex = content.indexOf(serviceTerms)
+                                endIndex = protocolContent.indexOf(serviceTerms)
                             )
                         )
                     }
@@ -178,9 +177,9 @@ fun ServiceTermsAndPrivacyPolicyTipsDialog() {
                         )
                     ) {
                         append(
-                            text = content.substring(
-                                startIndex = content.indexOf(string = serviceTerms) + serviceTerms.length,
-                                endIndex = content.indexOf(string = privacyPolicy)
+                            text = protocolContent.substring(
+                                startIndex = protocolContent.indexOf(string = serviceTerms) + serviceTerms.length,
+                                endIndex = protocolContent.indexOf(string = privacyPolicy)
                             )
                         )
                     }
@@ -193,9 +192,9 @@ fun ServiceTermsAndPrivacyPolicyTipsDialog() {
                         )
                     ) {
                         append(
-                            text = content.substring(
-                                startIndex = content.indexOf(string = privacyPolicy) + privacyPolicy.length,
-                                endIndex = content.indexOf(string = childrenPrivacyPolicy)
+                            text = protocolContent.substring(
+                                startIndex = protocolContent.indexOf(string = privacyPolicy) + privacyPolicy.length,
+                                endIndex = protocolContent.indexOf(string = childrenPrivacyPolicy)
                             )
                         )
                     }
@@ -208,8 +207,8 @@ fun ServiceTermsAndPrivacyPolicyTipsDialog() {
                         )
                     ) {
                         append(
-                            text = content.substring(
-                                startIndex = content.indexOf(string = childrenPrivacyPolicy) + childrenPrivacyPolicy.length
+                            text = protocolContent.substring(
+                                startIndex = protocolContent.indexOf(string = childrenPrivacyPolicy) + childrenPrivacyPolicy.length
                             )
                         )
                     }
@@ -228,7 +227,7 @@ fun ServiceTermsAndPrivacyPolicyTipsDialog() {
                 onClick = {
                     coroutineScope.launch {
                         defaultMMKV.encode(CommonConst.Default.AGREE_WITH_THE_PROTOCOL, true)
-                        agreeWithTheProtocol = true
+                        agreeWithTheProtocol.value = true
                     }
                 },
                 modifier = Modifier

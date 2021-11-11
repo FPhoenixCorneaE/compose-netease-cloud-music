@@ -7,4 +7,8 @@
     <string name="children_privacy_policy">《儿童隐私政策》</string>
     <string name="agree">同意</string>
     <string name="disagree_and_exit_the_app"><![CDATA[不同意并退出APP>>]]></string>
+    <string name="cloud_music_permission_application">云音乐权限申请</string>
+    <string name="cloud_music_permission_storage_space_and_device_info">云音乐需要获取存储空间和设备信息权限，以保证歌曲正常播放下载以及您的帐号安全。</string>
+    <string name="cancel">取消</string>
+    <string name="grant">授权</string>
 </resources>
