@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="service_terms_and_privacy_policy_tips_title">服务条款和隐私政策提示</string>
+    <string name="service_terms_and_privacy_policy_tips_content">欢迎使用网易云音乐！\n\n在您使用网易云音乐前，请您认真阅读并了解《服务条款》和《隐私政策》。\n\n如您未满14周岁，您还需通知您的监护人共同阅读《儿童隐私政策》，点击“同意”即表示您和您的监护人已阅读并同意全部条款。</string>
+    <string name="service_terms">《服务条款》</string>
+    <string name="privacy_policy">《隐私政策》</string>
+    <string name="children_privacy_policy">《儿童隐私政策》</string>
+    <string name="agree">同意</string>
+    <string name="disagree_and_exit_the_app"><![CDATA[不同意并退出APP>>]]></string>
+</resources>

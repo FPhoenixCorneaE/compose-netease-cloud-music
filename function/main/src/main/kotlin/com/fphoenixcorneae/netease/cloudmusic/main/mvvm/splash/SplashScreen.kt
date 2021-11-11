@@ -11,6 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import com.fphoenixcorneae.netease.cloudmusic.main.R
+import com.fphoenixcorneae.netease.cloudmusic.main.mvvm.protocol.ServiceTermsAndPrivacyPolicyTipsDialog
 
 @Preview
 @OptIn(ExperimentalCoilApi::class)
@@ -42,5 +43,7 @@ fun SplashScreen() {
                     .padding(top = 8.dp)
             )
         }
+
+        ServiceTermsAndPrivacyPolicyTipsDialog()
     }
 }

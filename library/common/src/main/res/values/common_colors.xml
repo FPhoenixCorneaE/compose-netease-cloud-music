@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="red">#ff0000</color>
-    <color name="color_0xff4840">#ff4840</color>
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+    <!-- 纯黑 -->
+    <color name="black">#000000</color>
+    <!-- 纯白 -->
     <color name="white">#ffffff</color>
+    <!-- 纯红 -->
+    <color name="red">#ff0000</color>
+    <!-- 纯黄 -->
+    <color name="yellow">#ffff00</color>
+    <!-- 纯绿 -->
+    <color name="green">#00ff00</color>
+    <!-- 纯蓝 -->
+    <color name="blue">#0000ff</color>
+    <!-- 粉红 -->
+    <color name="pink">#ffc0cb</color>
+    <!-- 紫色 -->
+    <color name="purple">#800080</color>
+    <!-- 青色 -->
+    <color name="cyan">#00ffff</color>
+    <!-- 洋红色 -->
+    <color name="magenta">#ff00ff</color>
+    <!-- 灰色 -->
+    <color name="gray">#888888</color>
+
+    <color name="color_0xff4840">#ff4840</color>
     <color name="color_0xdb2c1f">#db2c1f</color>
+    <color name="color_0xcc000000">#cc000000</color>
+    <color name="color_0x99000000">#99000000</color>
+    <color name="color_0x507daf">#507daf</color>
 </resources>
