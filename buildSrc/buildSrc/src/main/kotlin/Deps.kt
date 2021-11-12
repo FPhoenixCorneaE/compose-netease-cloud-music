@@ -88,6 +88,7 @@ object Deps {
      */
     object ThirdParty {
         const val mmkv = "com.tencent:mmkv-static:1.2.9"
+        const val xXPermission = "com.github.getActivity:XXPermissions:11.6"
     }
 
     /**

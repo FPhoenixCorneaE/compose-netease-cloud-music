@@ -1,5 +1,6 @@
 package com.fphoenixcorneae.netease.cloudmusic.main.mvvm.splash
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -8,6 +9,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -17,11 +19,15 @@ import com.fphoenixcorneae.netease.cloudmusic.common.constant.CommonConst
 import com.fphoenixcorneae.netease.cloudmusic.main.R
 import com.fphoenixcorneae.netease.cloudmusic.main.mvvm.permission.CloudMusicPermissionDialog
 import com.fphoenixcorneae.netease.cloudmusic.main.mvvm.protocol.ServiceTermsAndPrivacyPolicyTipsDialog
+import com.hjq.permissions.Permission
+import com.hjq.permissions.XXPermissions
 
 @Preview
 @OptIn(ExperimentalCoilApi::class)
 @Composable
-fun SplashScreen() {
+fun SplashScreen(
+    context: Context = LocalContext.current
+) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -59,7 +65,17 @@ fun SplashScreen() {
 
             },
             onClickGrant = {
+                XXPermissions.with(context)
+                    .permission(
+                        Permission.READ_EXTERNAL_STORAGE,
+                        Permission.WRITE_EXTERNAL_STORAGE,
+                        Permission.READ_PHONE_STATE,
+                    )
+                    .request { permissions, all ->
+                        if (all) {
 
+                        }
+                    }
             }
         )
     }

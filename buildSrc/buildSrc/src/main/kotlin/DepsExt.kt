@@ -46,6 +46,7 @@ internal val composeThirdPartyDependencies = listOf(
 
 internal val thirdPartyDependencies = listOf(
     Deps.ThirdParty.mmkv,
+    Deps.ThirdParty.xXPermission,
 )
 
 internal val fPhoenixCornerEDependencies = listOf(
