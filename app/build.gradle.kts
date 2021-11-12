@@ -55,4 +55,5 @@ android.applicationVariants.all {
 
 dependencies {
     implementation(project(mapOf("path" to ":function:main")))
+    implementation(project(mapOf("path" to ":function:login")))
 }
