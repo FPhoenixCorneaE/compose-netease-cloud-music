@@ -67,8 +67,7 @@ fun SplashScreen(
             onClickGrant = {
                 XXPermissions.with(context)
                     .permission(
-                        Permission.READ_EXTERNAL_STORAGE,
-                        Permission.WRITE_EXTERNAL_STORAGE,
+                        Permission.MANAGE_EXTERNAL_STORAGE,
                         Permission.READ_PHONE_STATE,
                     )
                     .request { permissions, all ->

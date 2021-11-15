@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fphoenixcorneae.netease.cloudmusic.main">
 
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
     <application
         android:name=".core.app.CloudMusicApplication"
         android:allowBackup="false"
@@ -10,6 +14,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/netease_cloud_music_app_name"
         android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:replace="android:allowBackup, android:theme">
