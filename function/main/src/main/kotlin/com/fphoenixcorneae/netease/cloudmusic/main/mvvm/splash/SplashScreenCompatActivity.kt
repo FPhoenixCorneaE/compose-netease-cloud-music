@@ -2,6 +2,7 @@ package com.fphoenixcorneae.netease.cloudmusic.main.mvvm.splash
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -24,6 +25,7 @@ import kotlinx.coroutines.launch
  * @desc：全版本兼容 SplashScreen
  * @date：2021/11/09 16:42
  */
+@SuppressLint("CustomSplashScreen")
 class SplashScreenCompatActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,15 +57,15 @@ class SplashScreenCompatActivity : BaseActivity(), SplashScreen.OnExitAnimationL
             //
             systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
+        setRealContent {
+            SplashScreen()
+        }
     }
 
     override fun initListener() {
     }
 
     override fun initData() {
-        setRealContent {
-            SplashScreen()
-        }
     }
 
     override fun toolbarVisible(): Boolean {

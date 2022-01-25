@@ -89,10 +89,12 @@ object Deps {
     object ThirdParty {
         const val mmkv = "com.tencent:mmkv-static:1.2.9"
         const val xXPermission = "com.github.getActivity:XXPermissions:11.6"
+        const val dRouterApi = "io.github.didi:drouter-api:2.1.0"
 
         object Fresco {
             private const val version = "2.6.0"
             const val fresco = "com.facebook.fresco:fresco:$version"
+            const val animatedBase = "com.facebook.fresco:animated-base:$version"
             const val animatedGif = "com.facebook.fresco:animated-gif:$version"
             const val animatedWebp = "com.facebook.fresco:animated-webp:$version"
             const val webpSupport = "com.facebook.fresco:webpsupport:$version"

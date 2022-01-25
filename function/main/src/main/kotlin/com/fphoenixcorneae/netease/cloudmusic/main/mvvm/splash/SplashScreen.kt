@@ -14,8 +14,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
+import com.didi.drouter.api.DRouter
 import com.fphoenixcorneae.jetpackmvvm.ext.defaultMMKV
 import com.fphoenixcorneae.netease.cloudmusic.common.constant.CommonConst
+import com.fphoenixcorneae.netease.cloudmusic.common.constant.DRouterConst
 import com.fphoenixcorneae.netease.cloudmusic.main.R
 import com.fphoenixcorneae.netease.cloudmusic.main.mvvm.permission.CloudMusicPermissionDialog
 import com.fphoenixcorneae.netease.cloudmusic.main.mvvm.protocol.ServiceTermsAndPrivacyPolicyTipsDialog
@@ -62,7 +64,7 @@ fun SplashScreen(
         CloudMusicPermissionDialog(
             agreeWithTheProtocol = agreeWithTheProtocol,
             onClickCancel = {
-
+                DRouter.build(DRouterConst.Login).start(context)
             },
             onClickGrant = {
                 XXPermissions.with(context)
@@ -70,9 +72,9 @@ fun SplashScreen(
                         Permission.MANAGE_EXTERNAL_STORAGE,
                         Permission.READ_PHONE_STATE,
                     )
-                    .request { permissions, all ->
+                    .request { _, all ->
                         if (all) {
-
+                            DRouter.build(DRouterConst.Login).start(context)
                         }
                     }
             }

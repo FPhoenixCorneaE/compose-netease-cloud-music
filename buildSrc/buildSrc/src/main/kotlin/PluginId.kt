@@ -4,8 +4,12 @@ object PluginId {
     const val kotlinAndroid = "android"
     const val kotlinParcelize = "kotlin-parcelize"
     const val kotlinKapt = "kapt"
+
     /** See [common-compose-module-configs.gradle.kts] file */
     const val commonComposeModuleConfigs = "common-compose-module-configs"
+
     /** See [common-kotlin-module-configs.gradle.kts] file */
     const val commonKotlinModuleConfigs = "common-kotlin-module-configs"
+
+    const val dRouter = "com.didi.drouter"
 }

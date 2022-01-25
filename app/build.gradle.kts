@@ -1,5 +1,6 @@
 plugins {
     id(PluginId.androidApplication)
+    id(PluginId.dRouter)
 }
 
 android {

@@ -47,7 +47,9 @@ internal val composeThirdPartyDependencies = listOf(
 internal val thirdPartyDependencies = listOf(
     Deps.ThirdParty.mmkv,
     Deps.ThirdParty.xXPermission,
+    Deps.ThirdParty.dRouterApi,
     Deps.ThirdParty.Fresco.fresco,
+    Deps.ThirdParty.Fresco.animatedBase,
     Deps.ThirdParty.Fresco.animatedGif,
     Deps.ThirdParty.Fresco.animatedWebp,
     Deps.ThirdParty.Fresco.webpSupport,
