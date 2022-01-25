@@ -9,7 +9,7 @@ import java.util.*
 object Deps {
 
     object FPhoenixCorneaE {
-        const val commonUtil = "com.github.FPhoenixCorneaE:CommonUtil:1.1.2"
+        const val common = "com.github.FPhoenixCorneaE:common:2.0.1"
         const val commonToolbar = "com.github.FPhoenixCorneaE:CommonToolbar:2.0.0"
         const val jetpackMvvmCompose = "com.github.FPhoenixCorneaE:JetpackMvvmCompose:1.0.5"
         const val coRetrofit = "com.github.FPhoenixCorneaE:CoRetrofit:1.0.1"

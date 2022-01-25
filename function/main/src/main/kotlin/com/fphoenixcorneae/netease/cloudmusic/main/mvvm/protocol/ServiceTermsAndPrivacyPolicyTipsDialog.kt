@@ -26,12 +26,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import com.fphoenixcorneae.common.ext.exitApp
+import com.fphoenixcorneae.common.util.IntentUtil
 import com.fphoenixcorneae.jetpackmvvm.ext.defaultMMKV
 import com.fphoenixcorneae.netease.cloudmusic.common.R
 import com.fphoenixcorneae.netease.cloudmusic.common.constant.CommonConst
 import com.fphoenixcorneae.netease.cloudmusic.common.constant.UrlConst
-import com.fphoenixcorneae.util.AppUtil
-import com.fphoenixcorneae.util.IntentUtil
 import kotlinx.coroutines.launch
 
 /**
@@ -258,7 +258,7 @@ fun ServiceTermsAndPrivacyPolicyTipsDialog(
                     .align(alignment = Alignment.CenterHorizontally)
                     .clickable {
                         coroutineScope.launch {
-                            AppUtil.exitApp()
+                            exitApp()
                         }
                     },
             )
