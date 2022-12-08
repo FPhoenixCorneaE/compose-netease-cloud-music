@@ -5,7 +5,7 @@ plugins {
 
 dependencies {
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(project(mapOf("path" to ":library:common")))
+    implementation(projects.library.common)
     // kotlin
     addKotlinDependencies()
     // androidX
