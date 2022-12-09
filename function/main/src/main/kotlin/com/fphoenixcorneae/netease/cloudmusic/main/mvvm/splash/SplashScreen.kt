@@ -1,5 +1,6 @@
 package com.fphoenixcorneae.netease.cloudmusic.main.mvvm.splash
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import androidx.compose.foundation.Image
@@ -34,7 +35,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalCoilApi::class)
 @Composable
 fun SplashScreen(
-    context: Context = LocalContext.current
+    context: Context = LocalContext.current,
 ) {
     Box(
         modifier = Modifier.fillMaxSize()
@@ -70,7 +71,29 @@ fun SplashScreen(
         ServiceTermsAndPrivacyPolicyTipsDialog(agreeWithTheProtocol = agreeWithTheProtocol)
         // 云音乐权限申请弹窗
         val coroutineScope = rememberCoroutineScope()
-        val permissions = arrayOf(Permission.MANAGE_EXTERNAL_STORAGE, Permission.READ_PHONE_STATE)
+        val permissions = arrayOf(
+            // 相机相册权限
+            Permission.CAMERA,
+            // 存储权限
+            Permission.READ_EXTERNAL_STORAGE,
+            Permission.WRITE_EXTERNAL_STORAGE,
+            Permission.MANAGE_EXTERNAL_STORAGE,
+            // 录音权限
+            Permission.RECORD_AUDIO,
+            // 蓝牙权限
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_ADVERTISE,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            // 定位权限
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            // 读取电话状态
+            Permission.READ_PHONE_STATE,
+            // 通讯录权限
+            Manifest.permission.READ_CONTACTS,
+            Manifest.permission.WRITE_CONTACTS,
+            Manifest.permission.GET_ACCOUNTS,
+        )
         val isPermissionsGranted = remember {
             mutableStateOf(XXPermissions.isGranted(context, permissions))
         }

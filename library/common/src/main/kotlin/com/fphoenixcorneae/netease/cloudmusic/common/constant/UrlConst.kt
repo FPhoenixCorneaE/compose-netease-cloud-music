@@ -10,12 +10,12 @@ object UrlConst {
 
     object Protocol {
         // 《服务条款》
-        const val SERVICE_TERMS = "https://st.music.163.com/official-terms/service"
+        const val SERVICE_TERMS = "https://st.music.163.com/official-terms?tab=service"
 
         // 《隐私政策》
-        const val PRIVACY_POLICY = "https://st.music.163.com/official-terms"
+        const val PRIVACY_POLICY = "https://st.music.163.com/official-terms?tab=privacy"
 
         // 《儿童隐私政策》
-        const val CHILDREN_PRIVACY_POLICY = "https://st.music.163.com/official-terms/children"
+        const val CHILDREN_PRIVACY_POLICY = "https://st.music.163.com/official-terms?tab=children"
     }
 }
