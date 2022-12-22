@@ -30,10 +30,14 @@
     <!-- 蓝牙权限 End -->
 
     <!-- 通讯录权限 Start -->
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!-- 通讯录权限 End -->
+
+    <!-- 录音权限 Start -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 录音权限 End -->
 
     <application
         android:name=".core.app.CloudMusicApplication"

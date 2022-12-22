@@ -3,6 +3,7 @@ package com.fphoenixcorneae.netease.cloudmusic.main.mvvm.splash
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import android.os.Build
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -71,19 +72,13 @@ fun SplashScreen(
         ServiceTermsAndPrivacyPolicyTipsDialog(agreeWithTheProtocol = agreeWithTheProtocol)
         // 云音乐权限申请弹窗
         val coroutineScope = rememberCoroutineScope()
-        val permissions = arrayOf(
+        val permissions = mutableListOf(
             // 相机相册权限
             Permission.CAMERA,
             // 存储权限
-            Permission.READ_EXTERNAL_STORAGE,
-            Permission.WRITE_EXTERNAL_STORAGE,
             Permission.MANAGE_EXTERNAL_STORAGE,
             // 录音权限
             Permission.RECORD_AUDIO,
-            // 蓝牙权限
-            Manifest.permission.BLUETOOTH_SCAN,
-            Manifest.permission.BLUETOOTH_ADVERTISE,
-            Manifest.permission.BLUETOOTH_CONNECT,
             // 定位权限
             Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_FINE_LOCATION,
@@ -94,6 +89,15 @@ fun SplashScreen(
             Manifest.permission.WRITE_CONTACTS,
             Manifest.permission.GET_ACCOUNTS,
         )
+        // Android 12 蓝牙权限必须加上下面代码，否则闪退
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            // 蓝牙权限
+            permissions.addAll(listOf(
+                Manifest.permission.BLUETOOTH_ADVERTISE,
+                Manifest.permission.BLUETOOTH_SCAN,
+                Manifest.permission.BLUETOOTH_CONNECT
+            ))
+        }
         val isPermissionsGranted = remember {
             mutableStateOf(XXPermissions.isGranted(context, permissions))
         }
