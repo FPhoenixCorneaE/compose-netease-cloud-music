@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">网易云音乐</string>
+    <string name="service_terms_and_privacy_policy_tips_title">服务条款和隐私政策提示</string>
+    <string name="service_terms_and_privacy_policy_tips_content">我们希望通过《服务条款》（下称“协议”）和《隐私政策》（《隐私政策》摘要）（统称“政策”）帮助您了解我们为您提供的服务，及收集、处理您个人信息的相应规则。如您未满14周岁，您还需通知您的监护人共同阅读《儿童隐私政策》。\n我们在政策里详细向您说明，我们收集您的个人信息类型及其对应的场景。在您使用某些功能时，我们会在获得您的同意后，收集您的敏感信息。拒绝提供敏感信息仅会使得您无法使用其对应的特定功能，但不影响您使用我们的其他服务。为向您提供特定服务或功能目的，我们可能会向您申请相应的设备权限，其中敏感权限（包括麦克风权限、位置权限及相机权限等）不会默认开启或强制开启。</string>
+    <string name="service_terms">《服务条款》</string>
+    <string name="privacy_policy">《隐私政策》</string>
+    <string name="children_privacy_policy">《儿童隐私政策》</string>
+    <string name="agree">同意</string>
+    <string name="disagree_and_exit_the_app"><![CDATA[不同意并退出APP>>]]></string>
+    <string name="cloud_music_permission_application">云音乐权限申请</string>
+    <string name="cloud_music_permission_storage_space_and_device_info">云音乐需要获取存储空间和设备信息权限，以保证歌曲正常播放下载以及您的帐号安全。</string>
+    <string name="cancel">取消</string>
+    <string name="grant">授权</string>
+</resources>

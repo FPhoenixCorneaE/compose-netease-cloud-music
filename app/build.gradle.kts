@@ -1,16 +1,22 @@
+import java.text.SimpleDateFormat
+import java.util.*
+
 plugins {
-    id(PluginId.androidApplication)
-    id(PluginId.dRouter)
+    id(libs.plugins.android.application.get().pluginId)
+    id(libs.plugins.kotlin.android.get().pluginId)
+    id(libs.plugins.kotlin.kapt.get().pluginId)
+    id(libs.plugins.kotlin.parcelize.get().pluginId)
 }
 
 android {
     defaultConfig {
-        applicationId = DefaultConfig.applicationId
-        compileSdk = DefaultConfig.compileSdkVersion
-        minSdk = DefaultConfig.minSdkVersion
-        targetSdk = DefaultConfig.targetSdkVersion
-        versionCode = DefaultConfig.versionCode
-        versionName = DefaultConfig.versionName
+        applicationId = "com.fphoenixcorneae.cloud.music"
+        namespace = applicationId
+        compileSdk = libs.versions.compileSdk.get().toInt()
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = 100
+        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
         ndk {
@@ -20,7 +26,7 @@ android {
     }
 
     buildTypes {
-        getByName(Deps.BuildType.Release) {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -29,32 +35,55 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.get()
+    }
+
     lint {
-        isCheckDependencies = true
-        isCheckReleaseBuilds = false
-        isAbortOnError = false
+        checkDependencies = true
+        checkReleaseBuilds = false
+        abortOnError = false
     }
 }
 
 // 输出文件
 android.applicationVariants.all {
-    // 编译类型
-    val buildType = buildType.name
     outputs.all {
         // 输出 Apk
         if (this is com.android.build.gradle.internal.api.ApkVariantOutputImpl) {
-            if (buildType == Deps.BuildType.Debug) {
-                this.outputFileName =
-                    "${project.name}_V${android.defaultConfig.versionName}_${buildType}_${Deps.getSystemTime()}.apk"
-            } else if (buildType == Deps.BuildType.Release) {
-                this.outputFileName =
-                    "${project.name}_V${android.defaultConfig.versionName}_${buildType}_${Deps.getSystemTime()}.apk"
-            }
+            outputFileName = "${project.name}_V${android.defaultConfig.versionName}_${buildType.name}_${
+                SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(Date())
+            }.apk"
         }
     }
 }
 
 dependencies {
-    implementation(projects.function.main)
-    implementation(projects.function.login)
+    // compose
+    implementation(libs.bundles.compose)
+    implementation(libs.bundles.accompanist)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.constraintlayout.compose)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.datastore)
+    implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.lifecycle.viewmodel.savedstate)
+    implementation(libs.coil.compose)
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.okhttp3.logging.interceptor)
+    debugImplementation(libs.androidx.compose.ui.tooling)
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!--统一全局窗口背景色-->
-    <color name="color_common_window_bg">#00000000</color>
-
-    <!--android5.0 ~ android5.1.1之间的-->
-    <color name="color_splash_screen_statusBar">#000000</color>
-    <color name="color_splash_screen_navigationBar">#000000</color>
-</resources>
