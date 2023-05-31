@@ -6,7 +6,10 @@ val apiService by lazy {
 }
 
 /**
- * @desc：网易云音乐API：https://neteasecloudmusicapi.vercel.app/#/
+ * @desc：网易云音乐API：
+ * 文档地址1：https://neteasecloudmusicapi-docs.4everland.app/#/
+ * 文档地址2：https://binaryify.github.io/NeteaseCloudMusicApi/#/
+ * 文档地址3：https://neteasecloudmusicapi.vercel.app/
  * @date：2023/03/31 15:00
  */
 interface ApiService {

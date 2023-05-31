@@ -19,9 +19,10 @@ dependencyResolutionManagement {
             version("minSdk", "21")
             version("targetSdk", "33")
             version("android", "7.4.1")
-            version("kotlin", "1.7.0")
-            version("compose", "1.2.0")
-            version("accompanist", "0.25.1")
+            version("kotlin", "1.8.21")
+            version("compose", "1.4.1")
+            version("compose-kotlinCompilerExtension", "1.4.7")
+            version("accompanist", "0.30.1")
 
             // plugin
             plugin("android-application", "com.android.application").versionRef("android")
@@ -51,7 +52,7 @@ dependencyResolutionManagement {
                     "androidx-compose-ui-tooling-preview",
                 )
             )
-            library("androidx-core-ktx", "androidx.core:core-ktx:1.9.0")
+            library("androidx-core-ktx", "androidx.core:core-ktx:1.10.0")
             library("androidx-constraintlayout-compose", "androidx.constraintlayout:constraintlayout-compose:1.0.1")
             library("androidx-activity-compose", "androidx.activity:activity-compose:1.6.1")
             library("androidx-datastore", "androidx.datastore:datastore-preferences:1.0.0")
@@ -82,7 +83,7 @@ dependencyResolutionManagement {
                     "accompanist-navigation-material",
                 )
             )
-            library("coil-compose", "io.coil-kt:coil-compose:1.3.2")
+            library("coil-compose", "io.coil-kt:coil-compose:2.4.0")
             library("retrofit2-retrofit", "com.squareup.retrofit2:retrofit:2.9.0")
             library("retrofit2-converter-gson", "com.squareup.retrofit2:converter-gson:2.9.0")
             library("okhttp3-logging-interceptor", "com.squareup.okhttp3:logging-interceptor:4.9.1")
@@ -95,4 +96,4 @@ enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
-rootProject.name = "netease-cloud-music-compose"
+rootProject.name = "compose-netease-cloud-music"
